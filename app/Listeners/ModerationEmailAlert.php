@@ -37,7 +37,7 @@ class ModerationEmailAlert
     {
         $htmlBody = '<html><body>Your Job Posting is under review its soon published</body></html>';
         Helper::sendMail($toEmail, "Job is under review", $htmlBody);
-        //Helper::logger()->alert("Email For Job poster : ".$htmlBody);
+        Helper::logger()->alert("Email For Job poster : ".$htmlBody);
     }
 
     /**
@@ -65,7 +65,7 @@ class ModerationEmailAlert
         Helper::sendMail($toEmail, "A new Job is awaiting Approval", $htmlBody);
 
 
-        //Helper::logger()->alert("EmailFor Moderator : ".$htmlBody);
+        Helper::logger()->alert("Email For Moderator : ".$htmlBody);
 
     }
 }

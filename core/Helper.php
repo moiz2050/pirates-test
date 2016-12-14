@@ -46,17 +46,17 @@ class Helper
 
         $mail = new \PHPMailer();
         $mail->isSMTP();
-        $mail->SMTPDebug = 0;
+        $mail->SMTPDebug =0;
         $mail->Debugoutput = 'html';
-        $mail->Host = 'smtp.mailtrap.io';
-        $mail->Port = 25;
-        $mail->SMTPSecure = 'tls';
         $mail->SMTPAuth = true;
-        $mail->Username = "90bc740f36f85d";
-        $mail->Password = "1d06e7cf6ba0d8";
-        $mail->setFrom('test@mueezsattar.com', 'First Last');
-        $mail->addReplyTo('test@mueezsattar.com', 'First Last');
-        $mail->addAddress($toEmailAddress, "New log");
+        $mail->SMTPSecure = "ssl";
+        $mail->Host = "smtp.gmail.com";
+        $mail->Port = 465;
+        $mail->Username = "piratestested@gmail.com";
+        $mail->Password = "$3cret!_";
+        $mail->setFrom('piratestested@gmail.com', 'Mueez');
+        $mail->addReplyTo('piratestested@gmail.com', 'Mueez');
+        $mail->addAddress($toEmailAddress, "User");
         $mail->AllowEmpty = true;
         $mail->msgHTML($body);
         $mail->Subject = $subject;

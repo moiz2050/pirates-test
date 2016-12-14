@@ -46,7 +46,7 @@ class PostController extends Controller
         $postAutoPublished = true;
 
         Manager::beginTransaction();
-        
+
         if (!$user) {
             $user = User::create([
                 'email' => $data['email']
@@ -122,7 +122,7 @@ class PostController extends Controller
         $post->status = Post::POST_STATUS_PUBLISHED;
         $post->save();
 
-        $this->loadView('post/show', ["post" => $post, "title" => $post->title]);
+        $this->redirect(Helper::makeUrl('post/show/'.$post->id));
     }
 
     /**
@@ -150,6 +150,6 @@ class PostController extends Controller
         $post->status = Post::POST_STATUS_SPAM;
         $post->save();
 
-        $this->loadView('post/show', ["post" => $post, "title" => $post->title]);
+        $this->redirect(Helper::makeUrl('post/show/'.$post->id));
     }
 }
