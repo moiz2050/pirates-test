@@ -8,6 +8,7 @@
 4. visit your root directory, it should be running
 
 **Tips**
+
 1. For testing the functionality , replace **your email** with moizsattar@yahoo.com email in `users` table, to become a moderator.
 2. if you dont want to change email after creating job post visit `logs/pirates.log` you can find both emails in there too
 
@@ -31,5 +32,6 @@
 4. GUMP for validating requests
 5. PHP Mailer for Emails
 6. MONOLOG for logging
+7. Events and Listeners for listening the job post creations events to send email accordingly
 
 **Happy Coding**
